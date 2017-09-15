@@ -1,0 +1,15 @@
+{
+  "name": "muchwow",
+  "version": "1.0.0",
+  "description": "Great app, wow. Much design. Much develop.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lee Mulvey",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.15.4"
+  }
+}
