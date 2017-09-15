@@ -8,12 +8,12 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-
+    const templateVars = {};
     generateMuchWow(10)
     .then((strings) => {
-        string.forEach((str) => {
-            console.log(str);
-        });
+        templateVars.strings = strings;
+        console.log(templateVars.strings);
+        res.render('main', templateVars);
     });
 });
 
@@ -25,11 +25,11 @@ const generateMuchWow = (num) => {
     return new Promise((resolve, reject) => {
         let strings = [];
         for(let i = 0; i < num; i++) {  
-            let pronoun = Math.floor(Math.random() * config.pronouns.length());
-            let noun = Math.floor(Math.random() * config.nouns.length());
+            let pronoun = Math.floor(Math.random() * config.pronouns.length);
+            let noun = Math.floor(Math.random() * config.nouns.length);
             strings.push(config.pronouns[pronoun] + " " + config.nouns[noun] + "!");
         }  
         
         resolve(strings);
-    }
+    });
 }
