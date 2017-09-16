@@ -1,4 +1,5 @@
 const config = require('./config');
+const utility = require('./utility-functions');
 
 // # Setup Express
 const express = require('express')
@@ -25,9 +26,7 @@ const generateMuchWow = (num) => {
     return new Promise((resolve, reject) => {
         let strings = [];
         for(let i = 0; i < num; i++) {  
-            let pronoun = Math.floor(Math.random() * config.pronouns.length);
-            let noun = Math.floor(Math.random() * config.nouns.length);
-            strings.push(config.pronouns[pronoun] + " " + config.nouns[noun] + "!");
+            strings.push(utility.randomItem(config.pronouns) + " " + utility.randomItem(config.nouns) + "!");
         }  
         
         resolve(strings);
