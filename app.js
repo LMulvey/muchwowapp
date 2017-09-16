@@ -28,7 +28,6 @@ const generateMuchWow = (num) => {
         for(let i = 0; i < num; i++) {  
             strings.push(utility.randomItem(config.pronouns) + " " + utility.randomItem(config.nouns) + "!");
         }  
-        
         resolve(strings);
     });
 }
